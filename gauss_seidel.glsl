@@ -14,7 +14,7 @@ vec4 effect(vec4 color, Image tex, vec2 uv, vec2 screen_coords) {
     vec4 right = Texel(tex, T(screen_coords + vec2(1.0, 0.0)));
     if (!calculatingHeightfield) {
         vec4 result = (texel + alpha * (top + bottom + left + right)) / beta;
-        return vec4(result.xyz, 1.);
+        return vec4(result.xy, texel.z, 1.);
     }
     else {
         float result = (texel.x + alpha * (top.y + bottom.y + left.y + right.y)) / beta;

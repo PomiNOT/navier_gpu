@@ -22,8 +22,10 @@ function love.load()
     visualizeShaderCode = love.filesystem.read("visualize.glsl")
     visualizeShader = love.graphics.newShader(visualizeShaderCode)
 
-    diffusionFactor = 100 * RES_SCALE
-    iters = 50
+    diffusionFactor = 5 * RES_SCALE
+    iters = 30
+
+    love.window.setTitle("Fluid Simulation")
 end
 
 function swap()
